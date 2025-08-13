@@ -1,0 +1,205 @@
+<svg viewBox="0 0 1200 800" xmlns="http://www.w3.org/2000/svg">
+  <defs>
+    <style>
+      .table-header { fill: #2563eb; font-family: Arial, sans-serif; font-size: 14px; font-weight: bold; }
+      .table-name { fill: white; font-family: Arial, sans-serif; font-size: 16px; font-weight: bold; }
+      .field-name { fill: #1f2937; font-family: Arial, sans-serif; font-size: 12px; }
+      .field-type { fill: #6b7280; font-family: Arial, sans-serif; font-size: 11px; }
+      .pk { fill: #dc2626; font-weight: bold; }
+      .fk { fill: #059669; font-weight: bold; }
+      .table-border { fill: white; stroke: #e5e7eb; stroke-width: 2; }
+      .relationship { stroke: #6b7280; stroke-width: 2; fill: none; }
+      .title { fill: #1f2937; font-family: Arial, sans-serif; font-size: 24px; font-weight: bold; }
+    </style>
+  </defs>
+  
+  <!-- Title -->
+  <text x="600" y="30" text-anchor="middle" class="title">Motorcycle Rental - Database Model</text>
+  
+  <!-- Motorcycles Table -->
+  <g transform="translate(50, 80)">
+    <rect width="280" height="200" class="table-border"/>
+    <rect width="280" height="35" class="table-header"/>
+    <text x="140" y="25" text-anchor="middle" class="table-name">🏍️ Motorcycles</text>
+    
+    <text x="10" y="55" class="field-name pk">Id</text>
+    <text x="180" y="55" class="field-type">UUID (PK)</text>
+    
+    <text x="10" y="75" class="field-name">Identifier</text>
+    <text x="180" y="75" class="field-type">VARCHAR(50)</text>
+    
+    <text x="10" y="95" class="field-name">Year</text>
+    <text x="180" y="95" class="field-type">INT</text>
+    
+    <text x="10" y="115" class="field-name">Model</text>
+    <text x="180" y="115" class="field-type">VARCHAR(100)</text>
+    
+    <text x="10" y="135" class="field-name">Plate</text>
+    <text x="180" y="135" class="field-type">VARCHAR(10) UNIQUE</text>
+    
+    <text x="10" y="155" class="field-name">CreatedAt</text>
+    <text x="180" y="155" class="field-type">TIMESTAMP</text>
+    
+    <text x="10" y="175" class="field-name">UpdatedAt</text>
+    <text x="180" y="175" class="field-type">TIMESTAMP</text>
+  </g>
+  
+  <!-- Drivers Table -->
+  <g transform="translate(50, 320)">
+    <rect width="280" height="240" class="table-border"/>
+    <rect width="280" height="35" class="table-header"/>
+    <text x="140" y="25" text-anchor="middle" class="table-name">👤 Drivers</text>
+    
+    <text x="10" y="55" class="field-name pk">Id</text>
+    <text x="180" y="55" class="field-type">UUID (PK)</text>
+    
+    <text x="10" y="75" class="field-name">Identifier</text>
+    <text x="180" y="75" class="field-type">VARCHAR(50)</text>
+    
+    <text x="10" y="95" class="field-name">Name</text>
+    <text x="180" y="95" class="field-type">VARCHAR(200)</text>
+    
+    <text x="10" y="115" class="field-name">CNPJ</text>
+    <text x="180" y="115" class="field-type">VARCHAR(14) UNIQUE</text>
+    
+    <text x="10" y="135" class="field-name">BirthDate</text>
+    <text x="180" y="135" class="field-type">DATE</text>
+    
+    <text x="10" y="155" class="field-name">CNHNumber</text>
+    <text x="180" y="155" class="field-type">VARCHAR(11) UNIQUE</text>
+    
+    <text x="10" y="175" class="field-name">CNHType</text>
+    <text x="180" y="175" class="field-type">VARCHAR(2)</text>
+    
+    <text x="10" y="195" class="field-name">CNHImageUrl</text>
+    <text x="180" y="195" class="field-type">VARCHAR(500)</text>
+    
+    <text x="10" y="215" class="field-name">CreatedAt/UpdatedAt</text>
+    <text x="180" y="215" class="field-type">TIMESTAMP</text>
+  </g>
+  
+  <!-- Rentals Table -->
+  <g transform="translate(450, 200)">
+    <rect width="300" height="300" class="table-border"/>
+    <rect width="300" height="35" class="table-header"/>
+    <text x="150" y="25" text-anchor="middle" class="table-name">📋 Rentals</text>
+    
+    <text x="10" y="55" class="field-name pk">Id</text>
+    <text x="200" y="55" class="field-type">UUID (PK)</text>
+    
+    <text x="10" y="75" class="field-name fk">MotorcycleId</text>
+    <text x="200" y="75" class="field-type">UUID (FK)</text>
+    
+    <text x="10" y="95" class="field-name fk">DriverId</text>
+    <text x="200" y="95" class="field-type">UUID (FK)</text>
+    
+    <text x="10" y="115" class="field-name">Plan</text>
+    <text x="200" y="115" class="field-type">VARCHAR(20)</text>
+    
+    <text x="10" y="135" class="field-name">StartDate</text>
+    <text x="200" y="135" class="field-type">DATE</text>
+    
+    <text x="10" y="155" class="field-name">EndDate</text>
+    <text x="200" y="155" class="field-type">DATE</text>
+    
+    <text x="10" y="175" class="field-name">ExpectedEndDate</text>
+    <text x="200" y="175" class="field-type">DATE</text>
+    
+    <text x="10" y="195" class="field-name">DailyRate</text>
+    <text x="200" y="195" class="field-type">DECIMAL(10,2)</text>
+    
+    <text x="10" y="215" class="field-name">TotalAmount</text>
+    <text x="200" y="215" class="field-type">DECIMAL(10,2)</text>
+    
+    <text x="10" y="235" class="field-name">Status</text>
+    <text x="200" y="235" class="field-type">VARCHAR(20)</text>
+    
+    <text x="10" y="255" class="field-name">ReturnDate</text>
+    <text x="200" y="255" class="field-type">DATE (Nullable)</text>
+    
+    <text x="10" y="275" class="field-name">PenaltyAmount</text>
+    <text x="200" y="275" class="field-type">DECIMAL(10,2)</text>
+  </g>
+  
+  <!-- MotorcycleEvents Table -->
+  <g transform="translate(870, 80)">
+    <rect width="280" height="220" class="table-border"/>
+    <rect width="280" height="35" class="table-header"/>
+    <text x="140" y="25" text-anchor="middle" class="table-name">📡 MotorcycleEvents</text>
+    
+    <text x="10" y="55" class="field-name pk">Id</text>
+    <text x="180" y="55" class="field-type">UUID (PK)</text>
+    
+    <text x="10" y="75" class="field-name fk">MotorcycleId</text>
+    <text x="180" y="75" class="field-type">UUID (FK)</text>
+    
+    <text x="10" y="95" class="field-name">EventType</text>
+    <text x="180" y="95" class="field-type">VARCHAR(50)</text>
+    
+    <text x="10" y="115" class="field-name">Year</text>
+    <text x="180" y="115" class="field-type">INT</text>
+    
+    <text x="10" y="135" class="field-name">EventData</text>
+    <text x="180" y="135" class="field-type">JSONB</text>
+    
+    <text x="10" y="155" class="field-name">ProcessedAt</text>
+    <text x="180" y="155" class="field-type">TIMESTAMP</text>
+    
+    <text x="10" y="175" class="field-name">CreatedAt</text>
+    <text x="180" y="175" class="field-type">TIMESTAMP</text>
+    
+    <text x="10" y="195" class="field-name">UpdatedAt</text>
+    <text x="180" y="195" class="field-type">TIMESTAMP</text>
+  </g>
+  
+  <!-- Relationships -->
+  <!-- Motorcycles -> Rentals -->
+  <path d="M 330 180 L 450 260" class="relationship" marker-end="url(#arrowhead)"/>
+  <text x="380" y="215" class="field-type">1:N</text>
+  
+  <!-- Drivers -> Rentals -->
+  <path d="M 330 400 L 450 320" class="relationship" marker-end="url(#arrowhead)"/>
+  <text x="380" y="365" class="field-type">1:N</text>
+  
+  <!-- Motorcycles -> MotorcycleEvents -->
+  <path d="M 330 150 L 870 150" class="relationship" marker-end="url(#arrowhead)"/>
+  <text x="590" y="140" class="field-type">1:N (via RabbitMQ)</text>
+  
+  <!-- Legend -->
+  <g transform="translate(870, 350)">
+    <rect width="280" height="180" class="table-border"/>
+    <rect width="280" height="35" class="table-header"/>
+    <text x="140" y="25" text-anchor="middle" class="table-name">📖 Legend</text>
+    
+    <text x="10" y="55" class="field-name pk">PK</text>
+    <text x="50" y="55" class="field-type">Primary Key</text>
+    
+    <text x="10" y="75" class="field-name fk">FK</text>
+    <text x="50" y="75" class="field-type">Foreign Key</text>
+    
+    <text x="10" y="95" class="field-type">🏍️ Motorcycles</text>
+    <text x="10" y="110" class="field-type">👤 Drivers</text>
+    <text x="10" y="125" class="field-type">📋 Rentals (Junction)</text>
+    <text x="10" y="140" class="field-type">📡 Events (Messaging)</text>
+    
+    <text x="10" y="165" class="field-type">Clean Architecture + DDD</text>
+  </g>
+  
+  <!-- Arrow marker definition -->
+  <defs>
+    <marker id="arrowhead" markerWidth="10" markerHeight="7" refX="10" refY="3.5" orient="auto">
+      <polygon points="0 0, 10 3.5, 0 7" fill="#6b7280"/>
+    </marker>
+  </defs>
+  
+  <!-- Database Info -->
+  <g transform="translate(870, 550)">
+    <rect width="280" height="120" class="table-border"/>
+    <rect width="280" height="35" class="table-header"/>
+    <text x="140" y="25" text-anchor="middle" class="table-name">🗃️ Database Info</text>
+    
+    <text x="10" y="55" class="field-type">Database: PostgreSQL 16</text>
+    <text x="10" y="75" class="field-type">ORM: Entity Framework Core 9</text>
+    <text x="10" y="95" class="field-type">Messaging: RabbitMQ</text>
+  </g>
+</svg>

@@ -1,0 +1,19 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <TargetFramework>net9.0</TargetFramework>
+    <ImplicitUsings>enable</ImplicitUsings>
+    <Nullable>enable</Nullable>
+  </PropertyGroup>
+
+  <ItemGroup>
+
+  </ItemGroup>
+
+  <ItemGroup>
+    <Compile Remove=".NETCoreApp,Version=v9.0.AssemblyAttributes.cs" />
+    <Compile Remove="MotorcycleRental.Domain.AssemblyInfo.cs" />
+    <Compile Remove="MotorcycleRental.Domain.GlobalUsings.g.cs" />
+  </ItemGroup>
+
+</Project>

@@ -46,7 +46,7 @@ MotorcycleRental/
 
 ### 1. Clone o repositório
 ```bash
-git clone [url-do-repositorio](https://github.com/Algorithimo/Desafio-BackEndMottu.git)
+git clone https://github.com/Algorithimo/Desafio-BackEndMottu.git
 cd MotorcycleRental
 ```
 
